@@ -1,24 +1,17 @@
-# README
+## Setup
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Setup database with seed data and install gems using:
 
-Things you may want to cover:
+```bash
+bin/setup
+```
 
-* Ruby version
+## Manual testing
 
-* System dependencies
+Visit `http://localhost:3000/quotes/new` and fill in the form
 
-* Configuration
+## Demo
 
-* Database creation
+![](https://media.giphy.com/media/1AIeegA5BYbok58f4n/giphy.gif)
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
