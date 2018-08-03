@@ -1,0 +1,28 @@
+<%= form_with(model: quote, local: true) do |form| %>
+  <% if quote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
+
+      <ul>
+      <% quote.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :text %>
+    <%= form.text_field :text %>
+  </div>
+
+  <div class="field">
+    <%= form.label :artist_id, 'Who said it?' %>
+    <%#= form.collection_select :artist_id, Artist.all.pluck(:name, :id), {}, { class: 'selectize' } %>
+    <%= form.collection_select :artist_id, Artist.order(:name), :id, :name, {prompt: 'Select an artist'}, {class: 'selectize'} %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
